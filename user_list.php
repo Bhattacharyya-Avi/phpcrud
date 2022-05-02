@@ -21,9 +21,11 @@ include 'connect.php';
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">name</th>
-      <th scope="col">email</th>
-      <th scope="col">address</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+      <th scope="col">Action</th>
+
     </tr>
   </thead>
   <tbody>
@@ -44,10 +46,16 @@ include 'connect.php';
                     <td>'.$name.'</td>
                     <td>'.$email.'</td>
                     <td>'.$address.'</td>
+                    <td>
+                        <button class="btn btn-info"><a style="color: white;" href="user_update.php?userID=',$id.'">Update</a></button>
+                        <button class="btn btn-danger"><a style="color: white;" href="user_delete.php?userID='.$id.'">Delete</a></button>    
+                    </td>
                 </tr>';
             }
         }
       ?>
+      
+
   </tbody>
 </table>
     </div>
