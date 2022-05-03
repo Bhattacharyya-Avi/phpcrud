@@ -15,6 +15,9 @@
         <div class="my-5">
             <button class="btn btn-info"><a style="color: white;" href="user_list.php">Let's Start</a></button>
         </div>
+        <div class="my-5">
+            <button class="btn btn-info"><a style="color: white;" href="product/product_add.php">Product</a></button>
+        </div>
     </div>
 </body>
 </html>
