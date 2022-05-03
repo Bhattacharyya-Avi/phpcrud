@@ -30,19 +30,23 @@ include 'connect.php';
   </thead>
   <tbody>
       <?php
+      # variable for showing serial
+      $i = 1;
       #taking data from db
         $sql = "select * from `user`";
         #checking the connection and data from db
         $result = mysqli_query($con,$sql);
         if ($result) {
+            // echo var_dump($result).'<br>';
             while ($row= mysqli_fetch_assoc($result)) {
+                // echo'<br>'. var_dump($row);
                 $id = $row['id'];
                 $name = $row['name'];
                 $email = $row['email'];
                 $address = $row['address'];
                 echo' 
                 <tr>
-                    <th scope="row">'.$id.'</th>
+                    <th scope="row">'.$i.'</th>
                     <td>'.$name.'</td>
                     <td>'.$email.'</td>
                     <td>'.$address.'</td>
@@ -51,6 +55,7 @@ include 'connect.php';
                         <button class="btn btn-danger"><a style="color: white;" href="user_delete.php?userID='.$id.'">Delete</a></button>    
                     </td>
                 </tr>';
+                $i++;
             }
         }
       ?>
